@@ -5,19 +5,17 @@ This Jupyter Notebook provides an end-to-end machine learning pipeline for analy
 Table of Contents
 Introduction
 
-Data Preprocessing
+1. Data Preprocessing
 
-Model Building and Evaluation
+2. Model Building and Evaluation
 
-CTR Improvement Estimation
+3. CTR Improvement Estimation
 
-Segmentation Analysis
+4. Segmentation Analysis
 
-Feature Importance Analysis
+5. Conclusion
 
-Conclusion
-
-1. Introduction
+## 1. Introduction
 This notebook aims to predict the likelihood of a user clicking on an email based on historical email data, such as email text, version, and user information. The following datasets are used:
 
 email_table.csv: Contains information about the emails (e.g., email ID, text, version, weekday, user country).
@@ -28,7 +26,7 @@ link_clicked_table.csv: Contains email IDs of the emails that users clicked on l
 
 The final goal is to build a predictive model that estimates the click-through rate (CTR) for each email and helps optimize email targeting strategies.
 
-2. Data Preprocessing
+## 2. Data Preprocessing
 Key steps:
 Labeling: Two new columns (opened, clicked) are added to the email_df to indicate whether the email was opened or clicked by the user.
 
@@ -50,7 +48,7 @@ A classification report is printed, showing the performance of the model.
 
 The ROC AUC score provides a measure of the model's ability to distinguish between clicked and non-clicked emails.
 
-4. CTR Improvement Estimation
+## 4. CTR Improvement Estimation
 The notebook estimates how much the CTR can be improved by only targeting the top 30% of users with the highest predicted click probabilities. The following steps are performed:
 
 Probability Thresholding: The 30% of users with the highest predicted probabilities are selected.
@@ -61,7 +59,7 @@ Output:
 
 The estimated CTR improvement is printed, showing the potential uplift from targeted sending.
 
-5. Segmentation Analysis
+## 5. Segmentation Analysis
 The notebook performs an analysis of CTR across different email segments based on email_text, email_version, and weekday. The following steps are performed:
 
 Grouping: The dataset is grouped by email_text, email_version, and weekday, and the average click-through rate is calculated for each segment.
@@ -71,7 +69,7 @@ Output:
 A summary table with segment-wise CTR values is printed, which can help identify which segments perform the best.
 
 
-6. Conclusion
+## 6. Conclusion
 The notebook demonstrates how to predict email click-through rates (CTR) using machine learning, and how to improve email targeting by focusing on users with high click probability. By analyzing email segments and the importance of features, businesses can gain valuable insights into optimizing their email campaigns for better engagement and performance.
 
 Requirements
